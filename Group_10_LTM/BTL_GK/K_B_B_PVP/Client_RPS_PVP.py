@@ -25,3 +25,18 @@ class RPSClientGUI:
             messagebox.showerror("Lỗi", "Không kết nối được tới server!")
             root.destroy()
             return
+        
+        msg = self.s.recv(1024).decode()
+        tk.Label(root, text=msg, font=("Arial", 12)).pack(pady=10)
+
+        self.result_label = tk.Label(root, text="", font=("Arial", 14))
+        self.result_label.pack(pady=10)
+
+        frame = tk.Frame(root)
+        frame.pack()
+
+        tk.Button(frame, text="Kéo", width=10, command=lambda: self.send_choice("keo")).grid(row=0, column=0, padx=5)
+        tk.Button(frame, text="Búa", width=10, command=lambda: self.send_choice("bua")).grid(row=0, column=1, padx=5)
+        tk.Button(frame, text="Bao", width=10, command=lambda: self.send_choice("bao")).grid(row=0, column=2, padx=5)
+
+        threading.Thread(target=self.receive_result, daemon=True).start()
