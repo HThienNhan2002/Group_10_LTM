@@ -25,3 +25,10 @@ class RPSClientGUI:
             messagebox.showerror("Lỗi", "Không kết nối được tới server!")
             root.destroy()
             return
+        
+
+#50 đến 53 Viên
+ if __name__ == "__main__":
+     root = tk.Tk()
+     app = RPSClientGUI(root)
+     root.mainloop()

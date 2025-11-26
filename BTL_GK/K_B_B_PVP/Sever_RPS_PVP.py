@@ -31,3 +31,9 @@ def handle_player(conn, index):
             data = conn.recv(1024).decode()
         except:
             break
+
+
+
+# 62 - 63 Viên
+if __name__ == "__main__":
+     main()
