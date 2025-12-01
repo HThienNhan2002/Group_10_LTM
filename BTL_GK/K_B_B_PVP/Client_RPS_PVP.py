@@ -32,3 +32,7 @@ class RPSClientGUI:
      root = tk.Tk()
      app = RPSClientGUI(root)
      root.mainloop()
+
+
+
+#CÔ GIÁO XINH ĐẸP
